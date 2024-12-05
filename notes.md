@@ -1,14 +1,18 @@
-## Database Structures and Management with MySQL
+## Meta Database Engineer Professional Certificate
 
 ### Table of Contents
-- [Module 1](#module-1)
-- [Module 2](#module-2)
-    - [Subqueries](#subqueries)
-- [Module 3](#module-3)
-    - [Functions in MySQL](#functions-in-mysql)
-- [Module 4](#module-4)
+- [Database Structures and Management with MySQL](#database-structures-and-management-with-mysql)
+  - [Module 1](#module-1)
+  - [Module 2](#module-2)
+      - [Subqueries](#subqueries)
+  - [Module 3](#module-3)
+      - [Functions in MySQL](#functions-in-mysql)
+  - [Module 4](#module-4)
 
 ---
+
+## Database Structures and Management with MySQL
+#### database-structures-and-management-with-mysql
 ### module 2
 #### Subqueries
  - A subquery is a query nested within another query, where the inner query (child) executes first and its results are used by the outer query (parent).
@@ -97,6 +101,29 @@
       SELECT SUBSTRING(column_name, start_position, length) FROM table_name;
       ```
 
-3. **Date Functions**
+3. **Date Functions**: Date functions in MySQL are used to extract and format date and time values in various formats.
+    - `CURDATE()`: Returns the current date.
+        ```sql 
+        SELECT CURDATE();
+        ```
+    - `CURTIME()`: Returns the current time.
+       ```sql 
+       SELECT CURTIME(); 
+       ```
+    - `NOW()`: Returns the current date and time.
+    - `DATE()`: Extracts the date part of a date or datetime expression.
+    - `TIME()`: Extracts the time part of a date or datetime expression.
+    - `DAYNAME()`: Returns the name of the weekday.
+    - `MONTHNAME()`: Returns the name of the month.
+    - `DAY()`: Returns the day of the month.
+    - `MONTH()`: Returns the month of the year.
+    - `YEAR()`: Returns the year.
+    - `HOUR()`: Returns the hour.
+    - `MINUTE()`: Returns the minute.
+    - `SECOND()`: Returns the second.
+    - `TIMESTAMP()`: Converts a date or datetime expression to a timestamp.
 4. **Control Flow Functions**
 5. **Comparison Functions**
+
+## Advanced MySQL Topics
+### Functions and Trigers
