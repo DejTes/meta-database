@@ -7,6 +7,7 @@
       - [Subqueries](#subqueries)
   - [Module 3](#module-3)
       - [Functions in MySQL](#functions-in-mysql)
+      - [Procuders](#Procudeures)
   - [Module 4](#module-4)
 
 ---
@@ -158,6 +159,24 @@
         ```sql
         SELECT LEAST(column1, column2, column3) FROM table_name;
         ```
+
+## Procedures
+#### Procedures
+-  Stored Procuders are a set of SQL statements that are stored in the database and can be executed on demand. They are used to encapsulate a set of operations or queries that need to be performed repeatedly.
+- The stored procedure in MySQL is a set of SQL instructions wrapped within the CREATE PROCEDURE statement to achieve a particular objective. 
+- Benefits include code consistency, reusability, and easier maintenance, reducing the need to rewrite the same SQL statements.
+- To create a stored procedure, use the CREATE PROCEDURE command followed by the procedure name and parameters (if any), then write the procedure logic.
+- To invoke a stored procedure, use the CALL command followed by the procedure name and parentheses.
+- If a stored procedure is no longer needed, it can be removed using the DROP PROCEDURE command followed by the procedure name, without parentheses.
+- The main idea behind creating stored procedures is to create reusable code that can be invoked and executed efficiently
+
+Syntax:
+```sql
+CREATE PROCEDURE procedure_name(parameter_value INT)
+SELECT column_name
+FROM table_name
+WHERE value = parameter_value;
+```
 
 
 ## Advanced MySQL Topics
