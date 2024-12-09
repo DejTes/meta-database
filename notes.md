@@ -9,6 +9,8 @@
       - [Functions in MySQL](#functions-in-mysql)
       - [Procuders](#Procudeures)
   - [Module 4](#module-4)
+- [Advanced MySQL Topics](#advanced-mysql-topics)
+  - [Functions and Trigers](#functions-and-trigers)
 
 ---
 
@@ -182,3 +184,30 @@ WHERE value = parameter_value;
 ## Advanced MySQL Topics
 ### Functions and Trigers
 
+- Differences between functions and stored procedures
+
+- Functions and procedures are used to encapsulate code that can be executed to implement repetitive tasks such as equations, formulas or business rules.
+
+- In addition, functions and stored procedures make your code more consistent, reusable and easier to use and maintain. 
+
+```sql
+ SELECT * FROM Clinets;
+ 
+ You can wrap this statement in a stored procedure as follows:
+
+ DELIMITER //
+CREATE PROCEDURE GetAllClients()
+BEGIN
+SELECT * FROM Clients;
+END //
+DELIMITER;
+
+```
+  Functions (Stored functions)                    |             STORED PROCEDURES   
+--------------------------------------------------|---------------------------------
+1. Created using CREATE FUNCTION command          | Created using CREATE PROCEDURE command
+2. Invoked using the SELECT statement             | Invoked using the CALL statement
+3. Returns a single value                         | Can return multiple values
+4. Takes IN parameters only                       | Can take IN, OUT, and INOUT parameters
+5. Typically encapsulates common formulas or generic business rules | Typically used to process, manipulate and modify data in the database
+6. Must specify the data type of the return value | User must specify the OUT parameter type
