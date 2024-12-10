@@ -192,7 +192,7 @@ WHERE value = parameter_value;
 
 ```sql
  SELECT * FROM Clinets;
- 
+
  You can wrap this statement in a stored procedure as follows:
 
  DELIMITER //
@@ -211,3 +211,23 @@ DELIMITER;
 4. Takes IN parameters only                       | Can take IN, OUT, and INOUT parameters
 5. Typically encapsulates common formulas or generic business rules | Typically used to process, manipulate and modify data in the database
 6. Must specify the data type of the return value | User must specify the OUT parameter type
+
+## MySQL Triggers and events
+
+
+- What is a MySQL Trigger?
+ - A MySQL trigger is a stored program that automatically executes a set of actions when specific events occur, such as inserting, updating, or deleting data from a table.
+ - Triggers help avoid the need to rewrite code for recurring actions, making database management more efficient.
+
+- Creating and Dropping Triggers
+
+  - To create a trigger, use the CREATE TRIGGER statement, followed by a unique trigger name, trigger type (insert, update, delete), and the table it applies to.
+
+  - To drop a trigger, use the DROP TRIGGER command with the IF EXISTS clause to prevent errors if the trigger does not exist.
+
+  ### Types of Triggers
+  There are two main types of triggers: 
+  - Row-level triggers, which are invoked for each row affected by an action, and 
+  - Statement-level triggers, which are invoked once per action regardless of the number of rows.
+
+- MySQL supports only row-level triggers, which are essential for performing actions like inserting, updating, or deleting data in a table.
