@@ -11,6 +11,8 @@
   - [Module 4](#module-4)
 - [Advanced MySQL Topics](#advanced-mysql-topics)
   - [Functions and Trigers](#functions-and-trigers)
+  - [MySQL Triggers and events](#mysql-triggers-and-events)
+  - [Database Optimization](#database-optimization)
 
 ---
 
@@ -242,6 +244,12 @@ DELIMITER;
   5. Trigger body: Consists of the statements that execute when the trigger activates. The BEGIN END block should be used to execute multiple statements.
 ```
   - To drop a trigger, use the DROP TRIGGER command with the IF EXISTS clause to prevent errors if the trigger does not exist.
+  
+    ```sql
+DROP TRIGGER [IF EXISTS] [schema_name.]trigger_name;
+
+The schema name must be specified if the trigger is not in the default (current) schema. When a table is dropped, any triggers associated with that table will also be dropped.
+```
 
   ### Types of Triggers
   There are two main types of triggers: 
@@ -258,3 +266,6 @@ DELIMITER;
 
   - To create an event, use the CREATE EVENT keywords, followed by IF NOT EXISTS, a unique event name, and the ON SCHEDULE clause to specify the time.
   - For one-time events, use the AT clause with a timestamp; for recurring events, use the EVERY clause along with STARTS and ENDS keywords.
+
+## Database Optimization
+### Optimizing database queries
