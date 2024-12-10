@@ -223,6 +223,24 @@ DELIMITER;
 
   - To create a trigger, use the CREATE TRIGGER statement, followed by a unique trigger name, trigger type (insert, update, delete), and the table it applies to.
 
+  ```sql
+    CREATE TRIGGER trigger_name
+  {BEFORE | AFTER} {INSERT | UPDATE| DELETE}
+  ON table_name FOR EACH ROW
+  trigger_body;
+
+    This syntax has 5 main parts:
+
+  1. Trigger name: All triggers must have a unique name within a schema or database name attached (optional). Triggers in different schemas can have the same name.
+
+  2. Trigger time:  This specifies when to action the trigger.  It can be BEFORE or AFTER the specified action to indicate that the trigger activates before or after each row that is inserted, modified or deleted.
+
+  3. Trigger event: This is the type of operation that activates the trigger. For example, INSERT, UPDATE and DELETE.
+
+  4. Table name: There must be a table to which the trigger is associated. It’s not possible to associate a trigger to a temporary table or a view.
+
+  5. Trigger body: Consists of the statements that execute when the trigger activates. The BEGIN END block should be used to execute multiple statements.
+```
   - To drop a trigger, use the DROP TRIGGER command with the IF EXISTS clause to prevent errors if the trigger does not exist.
 
   ### Types of Triggers
@@ -231,3 +249,12 @@ DELIMITER;
   - Statement-level triggers, which are invoked once per action regardless of the number of rows.
 
 - MySQL supports only row-level triggers, which are essential for performing actions like inserting, updating, or deleting data in a table.
+
+### Scheduled events
+  - A scheduled event in MySQL is a task executed at a specified time, with each event having a unique name and containing one or more SQL statements.
+  - There are two main types of scheduled events: one-time events (executed once) and recurring events (executed on a regular basis).
+
+  Creating Scheduled Events
+
+  - To create an event, use the CREATE EVENT keywords, followed by IF NOT EXISTS, a unique event name, and the ON SCHEDULE clause to specify the time.
+  - For one-time events, use the AT clause with a timestamp; for recurring events, use the EVERY clause along with STARTS and ENDS keywords.
